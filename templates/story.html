@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+
+{% block title %} Story {% endblock %}
+
+{% block content %}
+<div class="generated-container">
+  <h1 class="title">Your Story</h1>
+  <div class="generated-story">
+    <div class="large-font">{{story}}</div>
+    <hr>
+    <div>Stories not provided by Springboard are sourced from <a
+        href="https://kids.nationalgeographic.com/games/funny-fill-in">National
+        Geographic</a>
+    </div>
+  </div>
+  <a href="/" class="form-button">Home</a>
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+
+{% block title %}Madlibs{% endblock %}
+
+{% block content %}
+<div>
+  <div class="title">
+    <h1>Glad-libs</h1>
+    <h2>Fill in the blanks to write your own stories!</h2>
+  </div>
+  <form action="/story/{{story.icon}}" class="prompt-container large-font">
+    <ul class="prompts">
+      {% for prompt in story.prompts %}
+      <li>{{prompt.replace("_", " ").capitalize()}} <input type="text" name={{prompt}} required></li>
+      {% endfor %}
+    </ul>
+    <div class="form-buttons">
+      <a href="/" class="form-button">Home</a>
+      <button class="form-button">Submit</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}Madlibs{% endblock %}</title>
+  <link link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+  {% block content %}
+  <div class="title">
+    <h1>Glad-libs</h1>
+    <h2>Fill in the blanks to write your own stories!</h3>
+  </div>
+  <div class="story-container">
+    {% for story in stories %}
+      <a href="/prompts/{{story.icon}}" class="story-card">
+        <h3>{{story.title}}</h3>
+        <h4>by {{story.author}}</h4>
+        <div>
+          <svg width="12.5rem" height="12.5rem">
+            <image href="/static/icons/{{story.icon}}.svg" alt="a {{story.icon}} emoji" width="12.5rem"
+              height="12.5rem" />
+          </svg>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+  {% endblock %}
+  <div class="attribution">
+    Images are sourced from <a href="https://twemoji.twitter.com/">Twemoji</a>. Page by <a
+      href="https://github.com/acollino">Alex Collino</a>.
+  </div>
+</body>
+
+</html>
