@@ -1,8 +1,9 @@
 from flask import Flask, request, render_template, flash, redirect
 from stories import Story, get_stories
+import os
 
 app = Flask(__name__)
-app.secret_key = "to be changed if app is no longer public on github"
+app.secret_key = os.getenv("SECRET_KEY", "dev_default")
 
 story_list = get_stories()
 
